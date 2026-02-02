@@ -149,4 +149,10 @@ class RAGService:
             return "I apologize, but I'm having trouble generating a response right now."
 
 # Global instance
-rag_service = RAGService()
+rag_service = None
+
+def get_rag_service():
+    global rag_service
+    if rag_service is None:
+        rag_service = RAGService()
+    return rag_service
